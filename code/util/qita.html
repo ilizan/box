@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>h5调用摄像头可行性分析 | ilizan</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    <script>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?c55650934be5c64b3e72301d5487af14";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+            </script>
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.17aab604.css" as="style"><link rel="preload" href="/assets/js/app.d8ff7e94.js" as="script"><link rel="preload" href="/assets/js/2.c287c897.js" as="script"><link rel="preload" href="/assets/js/22.85e73ffc.js" as="script"><link rel="prefetch" href="/assets/js/10.76d685c1.js"><link rel="prefetch" href="/assets/js/11.f7ca39b2.js"><link rel="prefetch" href="/assets/js/12.def203c9.js"><link rel="prefetch" href="/assets/js/13.14d19957.js"><link rel="prefetch" href="/assets/js/14.22267aac.js"><link rel="prefetch" href="/assets/js/15.67695b0a.js"><link rel="prefetch" href="/assets/js/16.9cd20a13.js"><link rel="prefetch" href="/assets/js/17.dff71a52.js"><link rel="prefetch" href="/assets/js/18.1c7999a0.js"><link rel="prefetch" href="/assets/js/19.3c13bf81.js"><link rel="prefetch" href="/assets/js/20.3fc59cd1.js"><link rel="prefetch" href="/assets/js/21.1873563d.js"><link rel="prefetch" href="/assets/js/23.18f07643.js"><link rel="prefetch" href="/assets/js/24.19b54d19.js"><link rel="prefetch" href="/assets/js/25.3975ec8a.js"><link rel="prefetch" href="/assets/js/26.ff3cb98d.js"><link rel="prefetch" href="/assets/js/27.4635c34b.js"><link rel="prefetch" href="/assets/js/28.b1c0ef20.js"><link rel="prefetch" href="/assets/js/29.39695e9d.js"><link rel="prefetch" href="/assets/js/3.eda62380.js"><link rel="prefetch" href="/assets/js/30.9415ec23.js"><link rel="prefetch" href="/assets/js/31.de84f357.js"><link rel="prefetch" href="/assets/js/32.d5cd9b36.js"><link rel="prefetch" href="/assets/js/33.7a4d7482.js"><link rel="prefetch" href="/assets/js/4.dd1d10a9.js"><link rel="prefetch" href="/assets/js/5.35c30263.js"><link rel="prefetch" href="/assets/js/6.b72de60b.js"><link rel="prefetch" href="/assets/js/7.2fbfd6db.js"><link rel="prefetch" href="/assets/js/8.6535f6d8.js"><link rel="prefetch" href="/assets/js/9.acd446f9.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.17aab604.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="ilizan" class="logo"> <span class="site-name can-hide">ilizan</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/about.html" class="nav-link">
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/code/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/code/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/code/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/code/xcx/" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/code/util/" class="nav-link router-link-active">
+  util
+</a></li><li class="dropdown-item"><!----> <a href="/code/es6/" class="nav-link">
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/code/demo/" class="nav-link">
+  demo
+</a></li></ul></div></div><div class="nav-item"><a href="/tools/" class="nav-link">
+  工具箱
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/demo/" class="nav-link">
+  demo
+</a></li><li class="dropdown-item"><!----> <a href="/html.html" class="nav-link">
+  我的
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/about.html" class="nav-link">
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/code/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/code/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/code/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/code/xcx/" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/code/util/" class="nav-link router-link-active">
+  util
+</a></li><li class="dropdown-item"><!----> <a href="/code/es6/" class="nav-link">
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/code/demo/" class="nav-link">
+  demo
+</a></li></ul></div></div><div class="nav-item"><a href="/tools/" class="nav-link">
+  工具箱
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/demo/" class="nav-link">
+  demo
+</a></li><li class="dropdown-item"><!----> <a href="/html.html" class="nav-link">
+  我的
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Util</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/code/util/" aria-current="page" class="sidebar-link">数组</a></li><li><a href="/code/util/browser.html" class="sidebar-link">浏览器1</a></li><li><a href="/code/util/echarts.html" class="sidebar-link">前端第三方插件</a></li><li><a href="/code/util/qita.html" aria-current="page" class="active sidebar-link">h5调用摄像头可行性分析</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="h5调用摄像头可行性分析"><a href="#h5调用摄像头可行性分析" class="header-anchor">#</a> h5调用摄像头可行性分析</h3> <table><thead><tr><th></th> <th style="text-align:center;">调用摄像头拍照</th> <th style="text-align:right;">拍照页取景（拍照页显示人相框）</th> <th style="text-align:center;">图片压缩</th></tr></thead> <tbody><tr><td>H5套原生壳</td> <td style="text-align:center;">支持</td> <td style="text-align:right;">不支持</td> <td style="text-align:center;">支持（调用原生压缩，支持度较好）</td></tr> <tr><td>纯H5和微信小程序webview嵌套H5</td> <td style="text-align:center;">支持（但是得从<code>相册</code>和<code>拍照</code>里选一下<code>拍照</code>）</td> <td style="text-align:right;">不支持</td> <td style="text-align:center;">支持度不好（可用第三方js实现压缩，兼容性不好，且千元机以下机型容易内存不够程序卡死，而且压缩后为base64位编码字符串）</td></tr> <tr><td>微信小程序原生</td> <td style="text-align:center;">支持</td> <td style="text-align:right;">支持</td> <td style="text-align:center;">支持</td></tr> <tr><td>安卓原生</td> <td style="text-align:center;">支持</td> <td style="text-align:right;">支持</td> <td style="text-align:center;">支持</td></tr></tbody></table></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/code/util/echarts.html" class="prev">
+        前端第三方插件
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.d8ff7e94.js" defer></script><script src="/assets/js/2.c287c897.js" defer></script><script src="/assets/js/22.85e73ffc.js" defer></script>
+  </body>
+</html>
