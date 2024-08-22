@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+</head>
+<style type="text/css">
+	body {
+	    width: 100%;
+	    height: 100%;
+	    transform-style: preserve-3d;
+	    perspective: 100px;/* 使具有三维位置变换的元素产生透视效果。此处值越小 那么元素变化的幅度会越大 */
+	    /* cursor: pointer; */
+	}
+	
+	div {
+        margin: auto;
+	    width: 300px;
+	    height: 200px;
+	    background: #000000;
+	    transform-style: preserve-3d;
+	    transition: all .1s;
+	    cursor: pointer;
+	}
+</style>
+<body>
+	<div id="element">
+		<!-- <img src="" alt=""> -->
+		<!-- 此处可以添加 图片 鼠标划入可看到3D 的图片效果 -->
+	</div>
+	
+	
+	<script type="text/javascript">
+		const multiple = 90;//此处值越小 那么元素变化的幅度会越大
+		// const mouseOverContainer = document.getElementsByTagName("body")[0];
+		const mouseOverContainer = document.getElementById("element");
+		const element = document.getElementById("element");
+		
+		function transformElement(x, y) {
+		  let box = element.getBoundingClientRect();
+		  let calcX = -(y - box.y - (box.height / 2)) / multiple;
+		  let calcY = (x - box.x - (box.width / 2)) / multiple;
+		  
+		  element.style.transform  = "rotateX("+ calcX +"deg) "
+		                        + "rotateY("+ calcY +"deg)";
+		}
+		
+		mouseOverContainer.addEventListener('mousemove', (e) => {
+		  window.requestAnimationFrame(function(){
+		    transformElement(e.clientX, e.clientY);
+		  });
+		});
+		
+		mouseOverContainer.addEventListener('mouseleave', (e) => {
+		  window.requestAnimationFrame(function(){
+		    element.style.transform = "rotateX(0) rotateY(0)";
+		  });
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>node接口转发 | ilizan</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <script language="javascript" type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/js/MouseClickEffect.js"></script>
+    <script>
+            var _hmt = _hmt || [];
+            (function() {
+              var hm = document.createElement("script");
+              hm.src = "https://hm.baidu.com/hm.js?c55650934be5c64b3e72301d5487af14";
+              var s = document.getElementsByTagName("script")[0]; 
+              s.parentNode.insertBefore(hm, s);
+            })();
+            </script>
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.9741de52.css" as="style"><link rel="preload" href="/assets/js/app.5b8940fa.js" as="script"><link rel="preload" href="/assets/js/2.829d0839.js" as="script"><link rel="preload" href="/assets/js/19.2c1f61f3.js" as="script"><link rel="prefetch" href="/assets/js/10.3327195f.js"><link rel="prefetch" href="/assets/js/11.43e291f0.js"><link rel="prefetch" href="/assets/js/12.d1935403.js"><link rel="prefetch" href="/assets/js/13.03af5880.js"><link rel="prefetch" href="/assets/js/14.0c51dc27.js"><link rel="prefetch" href="/assets/js/15.53d9cd3c.js"><link rel="prefetch" href="/assets/js/16.9b900a5d.js"><link rel="prefetch" href="/assets/js/17.2e020993.js"><link rel="prefetch" href="/assets/js/18.ecb8e73d.js"><link rel="prefetch" href="/assets/js/20.0253507f.js"><link rel="prefetch" href="/assets/js/21.c6e22a31.js"><link rel="prefetch" href="/assets/js/22.f61490cf.js"><link rel="prefetch" href="/assets/js/23.a7f9df45.js"><link rel="prefetch" href="/assets/js/24.0b2b3060.js"><link rel="prefetch" href="/assets/js/25.d82352d1.js"><link rel="prefetch" href="/assets/js/26.51da59bc.js"><link rel="prefetch" href="/assets/js/27.d122edfb.js"><link rel="prefetch" href="/assets/js/28.849f5f3c.js"><link rel="prefetch" href="/assets/js/29.349104fb.js"><link rel="prefetch" href="/assets/js/3.4b3fc6bc.js"><link rel="prefetch" href="/assets/js/30.755f5a9a.js"><link rel="prefetch" href="/assets/js/31.ed9e8c1e.js"><link rel="prefetch" href="/assets/js/32.ddf8c584.js"><link rel="prefetch" href="/assets/js/33.877a6f8b.js"><link rel="prefetch" href="/assets/js/34.20658e65.js"><link rel="prefetch" href="/assets/js/35.c5138ab8.js"><link rel="prefetch" href="/assets/js/36.351727e1.js"><link rel="prefetch" href="/assets/js/37.4f0ef3d5.js"><link rel="prefetch" href="/assets/js/38.967a88a0.js"><link rel="prefetch" href="/assets/js/39.712b2b05.js"><link rel="prefetch" href="/assets/js/4.3d7c9ba5.js"><link rel="prefetch" href="/assets/js/40.a6f7e2c3.js"><link rel="prefetch" href="/assets/js/5.61798ba3.js"><link rel="prefetch" href="/assets/js/6.fa936b01.js"><link rel="prefetch" href="/assets/js/7.8caef0cc.js"><link rel="prefetch" href="/assets/js/8.de9e3822.js"><link rel="prefetch" href="/assets/js/9.6e61f004.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.9741de52.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="ilizan" class="logo"> <span class="site-name can-hide">ilizan</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/about.html" class="nav-link">
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/code/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/code/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/code/ts/renren.html" class="nav-link">
+  ts
+</a></li><li class="dropdown-item"><!----> <a href="/code/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/code/xcx/" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/code/util/" class="nav-link">
+  util
+</a></li><li class="dropdown-item"><!----> <a href="/code/es6/" class="nav-link">
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/code/demo/" class="nav-link">
+  demo
+</a></li><li class="dropdown-item"><!----> <a href="/code/node/http.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  node
+</a></li></ul></div></div><div class="nav-item"><a href="/tools/" class="nav-link">
+  工具箱
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/demo/" class="nav-link">
+  demo
+</a></li><li class="dropdown-item"><!----> <a href="/html.html" class="nav-link">
+  我的
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/about.html" class="nav-link">
+  关于
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端" class="dropdown-title"><span class="title">前端</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端" class="mobile-dropdown-title"><span class="title">前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/code/css/" class="nav-link">
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/code/js/" class="nav-link">
+  js
+</a></li><li class="dropdown-item"><!----> <a href="/code/ts/renren.html" class="nav-link">
+  ts
+</a></li><li class="dropdown-item"><!----> <a href="/code/vue/" class="nav-link">
+  vue
+</a></li><li class="dropdown-item"><!----> <a href="/code/xcx/" class="nav-link">
+  小程序
+</a></li><li class="dropdown-item"><!----> <a href="/code/util/" class="nav-link">
+  util
+</a></li><li class="dropdown-item"><!----> <a href="/code/es6/" class="nav-link">
+  es6
+</a></li><li class="dropdown-item"><!----> <a href="/code/demo/" class="nav-link">
+  demo
+</a></li><li class="dropdown-item"><!----> <a href="/code/node/http.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  node
+</a></li></ul></div></div><div class="nav-item"><a href="/tools/" class="nav-link">
+  工具箱
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><span class="title">更多</span> <span class="arrow down"></span></button> <button type="button" aria-label="更多" class="mobile-dropdown-title"><span class="title">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/demo/" class="nav-link">
+  demo
+</a></li><li class="dropdown-item"><!----> <a href="/html.html" class="nav-link">
+  我的
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Node</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/code/node/http.html" aria-current="page" class="active sidebar-link">node接口转发</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h4 id="新建工程"><a href="#新建工程" class="header-anchor">#</a> 新建工程</h4> <p>新建目录：node，cd进入该目录，运行命令：</p> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">npm</span> init
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h4 id="运行命令"><a href="#运行命令" class="header-anchor">#</a> 运行命令</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code><span class="token function">npm</span> <span class="token function">install</span> --save-dev express
+<span class="token function">npm</span> <span class="token function">install</span> --save-dev http-proxy-middleware
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h4 id="新建app-js"><a href="#新建app-js" class="header-anchor">#</a> 新建app.js：</h4> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> createProxyMiddleware <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http-proxy-middleware'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 设置静态资源</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>express<span class="token punctuation">.</span><span class="token function">static</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 使用代理</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">'/api'</span><span class="token punctuation">,</span> <span class="token function">createProxyMiddleware</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    target<span class="token operator">:</span> <span class="token string">'http://jsonplaceholder.typicode.com'</span><span class="token punctuation">,</span>
+    pathRewrite<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">'^/api'</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token comment">// 重写路径</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    changeOrigin<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+<span class="token comment">// 使用代理</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">'/apis'</span><span class="token punctuation">,</span> <span class="token function">createProxyMiddleware</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    target<span class="token operator">:</span> <span class="token string">'http://jsonplaceholder.typicode.com'</span><span class="token punctuation">,</span>
+    pathRewrite<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token string">'^/apis'</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span> <span class="token comment">// 重写路径</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    changeOrigin<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+
+
+<span class="token comment">// // 根据用户请求的地址，返回对应的数据信息</span>
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/list&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 打印当前请求地址</span>
+    <span class="token keyword">let</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">]</span>
+    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 路由参数  用途：根据路由参数展示不同的页面信息</span>
+app<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">&quot;/getinfo/:id&quot;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">&quot;您所访问的路径参数为：&quot;</span> <span class="token operator">+</span> req<span class="token punctuation">.</span>params<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8001</span><span class="token punctuation">)</span>
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br></div></div><h4 id="新建index-html"><a href="#新建index-html" class="header-anchor">#</a> 新建index.html</h4> <div class="language-html line-numbers-mode"><pre class="language-html"><code><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>en<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>UTF-8<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>viewport<span class="token punctuation">&quot;</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>width=device-width, initial-scale=1.0<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+    
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    <span class="token comment">// console.log(axios);</span>
+
+    axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'./api/posts'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">'./apis/posts'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div><h4 id="启动"><a href="#启动" class="header-anchor">#</a> 启动</h4> <div class="language-bash line-numbers-mode"><pre class="language-bash"><code>node app.js
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>访问 http://localhost:8001</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.5b8940fa.js" defer></script><script src="/assets/js/2.829d0839.js" defer></script><script src="/assets/js/19.2c1f61f3.js" defer></script>
+  </body>
+</html>

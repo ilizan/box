@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .navall {
+            width: 100%;
+            top: 0;
+            position: fixed;
+            z-index: 100;
+            border: 1px solid #ccc;
+            height: 50px;
+        }
+        .AppHeader{
+            position: relative;
+            height: 50px;
+            transition: .5s all;
+            background-color: #FFFFFF;
+            overflow: hidden;
+        }
+        .nav1,
+        .nav2 {
+            height: 50px; 
+            line-height: 50px;
+            position: relative;
+            transition: .5s all;
+        }
+
+        .nav1 {
+            
+        }
+        .nav2{
+            /* visibility: hidden; */
+            color: #FFFFFF;
+            opacity: 0;
+            height: 0;
+            /* transform: translateY(50px); */
+        }
+        .fix{
+            background-color: #cccccc;
+        }
+        .fix .nav1{
+            transform: translateY(-50px);
+        }
+        .fix .nav2{
+            transform: translateY(-50px);
+            opacity: 1;
+            height: 50px;
+        }
+        .inputMain{
+            width: 200px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .opt{
+            position: absolute;
+            top: 50px;
+            height: 0px;
+            width: 150px;
+            background-color: azure;
+            opacity: 0;
+            transition: .5s opacity;
+            color: #000000;
+        }
+        .main {
+            height: 2000px;
+            margin-top: 60px;
+        }
+        .inputMain input:focus + .opt{
+            opacity: 1;
+            height: auto;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="navall">
+        <div class="AppHeader" id="AppHeader">
+            <div class="nav1">
+                菜单1
+            </div>
+            <div class="nav2">
+                菜单2
+                <div class="inputMain">
+                    <input type="text">
+                    <div class="opt">
+                        选项
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        内容
+    </div>
+</body>
+
+</html>
+
+<script>
+    function topMenu() {
+        var oldTop = window.pageYOffset || document.documentElement.scrollTop; ////  || document.body.scrollTop
+        var timeout;
+        return function(){
+            var newTop = window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop;
+            if(newTop == 0){
+                // document.getElementById('AppHeader').style.top = 0
+                document.getElementById('AppHeader').classList.remove('fix')
+
+            }else if(newTop<oldTop){
+                setTimeout(() => {
+                    // document.getElementById('AppHeader').style.top = 0
+                    document.getElementById('AppHeader').classList.remove('fix')
+                    oldTop = newTop
+                }, 200);
+            }else if(newTop>oldTop){
+                setTimeout(() => {
+                    // document.getElementById('AppHeader').style.top = '-50px'
+                    document.getElementById('AppHeader').classList.add('fix')
+                    oldTop = newTop
+                }, 200);
+            }else{
+                oldTop = newTop
+            }
+            // console.log('old'+oldTop+'new'+newTop);
+        }
+    }
+    window.onscroll = topMenu()
+</script>
