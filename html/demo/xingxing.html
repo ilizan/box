@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            background: rgb(56, 53, 53);
+            margin: 0;
+            padding: 0;
+        }
+
+        #shineMain,#starMain {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            overflow: hidden;
+            /* z-index: -10; */
+            zoom: 1;
+            /* background-color: #fff; */
+            /* background-size: cover; */
+            background-size: 100% auto;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-position: center 0;
+        }
+
+        .shine {
+            background-color: azure;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 50%;
+            position: absolute;
+            animation: opacity-change 2s ease-in-out infinite;
+        }
+
+        @keyframes opacity-change {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* 月 */
+        .moon {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #ddd;
+            box-shadow: inset 10px -10px 0 0 #b9b9b9, 0px 0px 40px 20px #203A87;
+        }
+
+        .crater {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #bbb;
+        }
+
+        .crater1 {
+            top: 30px;
+            right: 30px;
+            box-shadow: inset -1px 2px 0 0 #969696;
+        }
+
+        .crater2 {
+            width: 20px;
+            height: 20px;
+            top: 15px;
+            right: 10px;
+            box-shadow: inset -2px 4px 0 0 #aaa;
+        }
+
+        .crater3 {
+            width: 5px;
+            height: 5px;
+            top: 10px;
+            right: 30px;
+        }
+        /* 流星 */
+        .star {
+            display: block;
+            background: transparent;
+            position: absolute;
+            opacity: 0;
+            /*过渡动画*/
+            animation: star-ani 2s linear infinite;
+        }
+
+        .star:after {
+            content: '';
+            border:1px solid red;
+            display: block;
+            border: 0px solid #fff;
+            border-width: 0px 90px 2px 90px;
+            border-color: transparent transparent transparent rgba(255, 255, 255, .5);
+            box-shadow: 0 0 1px 0 rgba(255, 255, 255, .1);
+            /*变形*/
+            transform: rotate(-80deg) translate3d(1px, 3px, 0);
+            transform-origin: 0% 100%;
+            -webkit-transform-origin: 0% 100%;
+            -moz-transform-origin: 0% 100%;
+        }
+
+
+        @keyframes star-ani {
+            0% {
+                opacity: 0;
+                transform: scale(1) translate3d(0, 0, 0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1) translate3d(-20px, 200px, 0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: scale(1) translate3d(-36px, 360px, 0);
+            }
+        }
+        /* 雪 */
+        #snowMask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./snow1.png),url(./snow2.png);
+    animation: 10s snow linear infinite;
+    pointer-events: none;
+    z-index: 9999;
+    display: none\9;
+}
+@keyframes snow {
+        0% {
+            background-position: 0 0,0 0
+        }
+
+        100% {
+            background-position: 500px 500px,1000px 500px
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="moon">
+        <div class="crater crater1"></div>
+        <div class="crater crater2"></div>
+        <div class="crater crater3"></div>
+    </div>
+    <div id="shineMain"></div>
+    <div id="starMain"></div>
+    <div id="snowMask"></div>
+</body>
+
+</html>
+<script>
+    function ranDomShine() {
+        setInterval(() => {
+            creatShine()
+            creatShine()
+            creatShine()
+            creatShine()
+            creatShine()
+            creatShine()
+            creatStar()
+            creatStar()
+        }, 1000)
+        function creatShine() {
+            let box = document.getElementById('shineMain')
+            let width = box.clientWidth
+            let heigh = box.clientHeight
+            let div = document.createElement('div')
+            div.className = 'shine'
+            div.style.top = Math.random() * heigh + 'px'
+            div.style.left = Math.random() * width + 'px'
+            let wh = Math.random() * 5
+            div.style.width = wh + 'px'
+            div.style.height = wh + 'px'
+            box.appendChild(div)
+            setTimeout(() => {
+                box.removeChild(div)
+            }, 2000)
+        }
+        function creatStar() {
+            let box = document.getElementById('starMain')
+            let width = box.clientWidth
+            let heigh = box.clientHeight
+            let div = document.createElement('div')
+            div.className = 'star'
+            div.style.top = Math.random() * heigh + 'px'
+            div.style.left = Math.random() * width + 'px'
+            box.appendChild(div)
+            setTimeout(() => {
+                box.removeChild(div)
+            }, 2000)
+        }
+    }
+    ranDomShine()
+</script>

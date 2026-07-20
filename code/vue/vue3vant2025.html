@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.30" />
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html,
+      body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme')
+      const systemDarkMode =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+        document.documentElement.classList.toggle('dark', true)
+      }
+    </script>
+    <script language="javascript" type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script><script language="javascript" type="text/javascript" src="/box/js/MouseClickEffect.js"></script><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c55650934be5c64b3e72301d5487af14";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><title>从0开始vuecli集成vant框架搭建2025 | ilizan</title><meta name="description" content="">
+    <link rel="preload" href="/box/assets/style-Dornt1c6.css" as="style"><link rel="stylesheet" href="/box/assets/style-Dornt1c6.css">
+    <link rel="modulepreload" href="/box/assets/app-Bs7c4l0-.js"><link rel="modulepreload" href="/box/assets/vue3vant2025-6YMf59mK.js">
+    <link rel="prefetch" href="/box/assets/about-BXRS0kRl.js" as="script"><link rel="prefetch" href="/box/assets/html-C9Mpi5Qa.js" as="script"><link rel="prefetch" href="/box/assets/README-DTSXqOBo.js" as="script"><link rel="prefetch" href="/box/assets/demo2-CVKfWuTj.js" as="script"><link rel="prefetch" href="/box/assets/README-i-bgfUNu.js" as="script"><link rel="prefetch" href="/box/assets/flex-DrwFlaDU.js" as="script"><link rel="prefetch" href="/box/assets/README-COC-i8nJ.js" as="script"><link rel="prefetch" href="/box/assets/HBuilderX-DwUZRMdS.js" as="script"><link rel="prefetch" href="/box/assets/README-DYfkHv__.js" as="script"><link rel="prefetch" href="/box/assets/ziyuan-Bkjqw-8O.js" as="script"><link rel="prefetch" href="/box/assets/README-BEQgpEYf.js" as="script"><link rel="prefetch" href="/box/assets/js2-BprVzEOA.js" as="script"><link rel="prefetch" href="/box/assets/lodash-VBPUKbt1.js" as="script"><link rel="prefetch" href="/box/assets/README-DN6zISPa.js" as="script"><link rel="prefetch" href="/box/assets/ts-BKhjgaFe.js" as="script"><link rel="prefetch" href="/box/assets/renren-BnHRsLW-.js" as="script"><link rel="prefetch" href="/box/assets/readme--sLQ27hM.js" as="script"><link rel="prefetch" href="/box/assets/browser-BUikHyBd.js" as="script"><link rel="prefetch" href="/box/assets/echarts-jlOoocwQ.js" as="script"><link rel="prefetch" href="/box/assets/qita-B8O0PF-h.js" as="script"><link rel="prefetch" href="/box/assets/README-BGa_DhJ5.js" as="script"><link rel="prefetch" href="/box/assets/http-B66gAFR1.js" as="script"><link rel="prefetch" href="/box/assets/jichu-Dm65OTcf.js" as="script"><link rel="prefetch" href="/box/assets/readme--E3MBe0l.js" as="script"><link rel="prefetch" href="/box/assets/elementPlus-D9mufEf_.js" as="script"><link rel="prefetch" href="/box/assets/nuxt-CaYVEM3w.js" as="script"><link rel="prefetch" href="/box/assets/README-z7I_9bk0.js" as="script"><link rel="prefetch" href="/box/assets/vite-umRS5_n-.js" as="script"><link rel="prefetch" href="/box/assets/vite320241107-ZuvoqaH7.js" as="script"><link rel="prefetch" href="/box/assets/vitevue3-LiPQGnyJ.js" as="script"><link rel="prefetch" href="/box/assets/vue3-J97MMMmF.js" as="script"><link rel="prefetch" href="/box/assets/vueAntd-B1aFQnmB.js" as="script"><link rel="prefetch" href="/box/assets/vuedemo-Byej_iH6.js" as="script"><link rel="prefetch" href="/box/assets/vuetreeselect-Cmas-8sn.js" as="script"><link rel="prefetch" href="/box/assets/vueVant-D7GWdIUZ.js" as="script"><link rel="prefetch" href="/box/assets/404.html-CsGm3RYq.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container external-link-icon"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/box/"><img class="logo" src="/box/img/logo.png" alt="ilizan"><span class="site-name can-hide" aria-hidden="true">ilizan</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide" aria-label="site navigation"><!--[--><div class="navbar-item"><a class="route-link auto-link" href="/box/" aria-label="首页"><!---->首页<!----></a></div><div class="navbar-item"><a class="route-link auto-link" href="/box/about.html" aria-label="关于"><!---->关于<!----></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="前端"><span class="title">前端</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="前端"><span class="title">前端</span><span class="right arrow"></span></button><ul class="navbar-dropdown" style="display:none;"><!--[--><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/code/css/" aria-label="css"><!---->css<!----></a></li><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/code/js/" aria-label="js"><!---->js<!----></a></li><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/code/ts/renren.html" aria-label="ts"><!---->ts<!----></a></li><li class="navbar-dropdown-item"><a class="route-link route-link-active auto-link" href="/box/code/vue/" aria-label="vue"><!---->vue<!----></a></li><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/code/xcx/" aria-label="小程序"><!---->小程序<!----></a></li><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/code/util/" aria-label="util"><!---->util<!----></a></li><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/code/es6/" aria-label="es6"><!---->es6<!----></a></li><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/code/demo/" aria-label="demo"><!---->demo<!----></a></li><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/code/node/http.html" aria-label="node"><!---->node<!----></a></li><!--]--></ul></div></div><div class="navbar-item"><a class="route-link auto-link" href="/box/tools/" aria-label="工具箱"><!---->工具箱<!----></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="更多"><span class="title">更多</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="更多"><span class="title">更多</span><span class="right arrow"></span></button><ul class="navbar-dropdown" style="display:none;"><!--[--><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/demo/" aria-label="demo"><!---->demo<!----></a></li><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/html.html" aria-label="我的"><!---->我的<!----></a></li><!--]--></ul></div></div><!--]--></nav><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg class="icon" focusable="false" viewBox="0 0 32 32" style=""><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg class="icon" focusable="false" viewBox="0 0 32 32" style="display:none;"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items" aria-label="site navigation"><!--[--><div class="navbar-item"><a class="route-link auto-link" href="/box/" aria-label="首页"><!---->首页<!----></a></div><div class="navbar-item"><a class="route-link auto-link" href="/box/about.html" aria-label="关于"><!---->关于<!----></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="前端"><span class="title">前端</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="前端"><span class="title">前端</span><span class="right arrow"></span></button><ul class="navbar-dropdown" style="display:none;"><!--[--><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/code/css/" aria-label="css"><!---->css<!----></a></li><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/code/js/" aria-label="js"><!---->js<!----></a></li><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/code/ts/renren.html" aria-label="ts"><!---->ts<!----></a></li><li class="navbar-dropdown-item"><a class="route-link route-link-active auto-link" href="/box/code/vue/" aria-label="vue"><!---->vue<!----></a></li><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/code/xcx/" aria-label="小程序"><!---->小程序<!----></a></li><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/code/util/" aria-label="util"><!---->util<!----></a></li><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/code/es6/" aria-label="es6"><!---->es6<!----></a></li><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/code/demo/" aria-label="demo"><!---->demo<!----></a></li><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/code/node/http.html" aria-label="node"><!---->node<!----></a></li><!--]--></ul></div></div><div class="navbar-item"><a class="route-link auto-link" href="/box/tools/" aria-label="工具箱"><!---->工具箱<!----></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="更多"><span class="title">更多</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="更多"><span class="title">更多</span><span class="right arrow"></span></button><ul class="navbar-dropdown" style="display:none;"><!--[--><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/demo/" aria-label="demo"><!---->demo<!----></a></li><li class="navbar-dropdown-item"><a class="route-link auto-link" href="/box/html.html" aria-label="我的"><!---->我的<!----></a></li><!--]--></ul></div></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading">从0开始vuecli集成vant框架搭建2025 <!----></p><ul class="sidebar-item-children" style=""><!--[--><li><a class="route-link auto-link sidebar-item" href="#vite搭建vue3项目" aria-label="vite搭建vue3项目"><!---->vite搭建vue3项目<!----></a><!----></li><li><a class="route-link auto-link sidebar-item" href="#集成vant" aria-label="集成vant"><!---->集成vant<!----></a><ul class="sidebar-item-children" style=""><!--[--><li><a class="route-link auto-link sidebar-item" href="#按需加载" aria-label="按需加载"><!---->按需加载<!----></a><!----></li><li><a class="route-link auto-link sidebar-item" href="#自动导入组件的插件" aria-label="自动导入组件的插件"><!---->自动导入组件的插件<!----></a><!----></li><!--]--></ul></li><li><a class="route-link auto-link sidebar-item" href="#vant主题色配置" aria-label="vant主题色配置"><!---->vant主题色配置<!----></a><!----></li><li><a class="route-link auto-link sidebar-item" href="#" aria-label><!----><!----></a><!----></li><li><a class="route-link auto-link sidebar-item" href="#配置代理" aria-label="配置代理"><!---->配置代理<!----></a><!----></li><li><a class="route-link auto-link sidebar-item" href="#router" aria-label="router"><!---->router<!----></a><!----></li><li><a class="route-link auto-link sidebar-item" href="#引入-axios" aria-label="引入 axios"><!---->引入 axios<!----></a><!----></li><li><a class="route-link auto-link sidebar-item" href="#安装tailwindcss和postcss" aria-label="安装tailwindcss和postcss"><!---->安装tailwindcss和postcss<!----></a><!----></li><li><a class="route-link auto-link sidebar-item" href="#vant主题色配置-1" aria-label="vant主题色配置"><!---->vant主题色配置<!----></a><!----></li><li><a class="route-link auto-link sidebar-item" href="#tailwind-config-js配置-主题色" aria-label="tailwind.config.js配置-主题色"><!---->tailwind.config.js配置-主题色<!----></a><!----></li><li><a class="route-link auto-link sidebar-item" href="#app-vue底部插入van-tabbar菜单-因为是悬浮-高度影响内容" aria-label="App.vue底部插入van-tabbar菜单，因为是悬浮，高度影响内容"><!---->App.vue底部插入van-tabbar菜单，因为是悬浮，高度影响内容<!----></a><!----></li><li><a class="route-link auto-link sidebar-item" href="#引入legacy插件-对旧版浏览器支持-尤其火狐" aria-label="引入legacy插件，对旧版浏览器支持(尤其火狐)"><!---->引入legacy插件，对旧版浏览器支持(尤其火狐)<!----></a><ul class="sidebar-item-children" style=""><!--[--><li><a class="route-link auto-link sidebar-item" href="#必须安装terser-因为-plugin-legacy-使用-terser-进行代码压缩。" aria-label="必须安装terser，因为 plugin-legacy 使用 Terser 进行代码压缩。"><!---->必须安装terser，因为 plugin-legacy 使用 Terser 进行代码压缩。<!----></a><!----></li><!--]--></ul></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h2 id="vite搭建vue3项目" tabindex="-1"><a class="header-anchor" href="#vite搭建vue3项目"><span>vite搭建vue3项目</span></a></h2><p><a href="https://cn.vuejs.org/guide/quick-start#creating-a-vue-application" target="_blank" rel="noopener noreferrer">https://cn.vuejs.org/guide/quick-start#creating-a-vue-application</a></p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">npm create vue@latest</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div></div></div><h2 id="集成vant" tabindex="-1"><a class="header-anchor" href="#集成vant"><span>集成vant</span></a></h2><h3 id="按需加载" tabindex="-1"><a class="header-anchor" href="#按需加载"><span>按需加载</span></a></h3><h3 id="自动导入组件的插件" tabindex="-1"><a class="header-anchor" href="#自动导入组件的插件"><span>自动导入组件的插件</span></a></h3><h2 id="vant主题色配置" tabindex="-1"><a class="header-anchor" href="#vant主题色配置"><span>vant主题色配置</span></a></h2><p>main.js中引入vant-theme.css即可：</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">/* vant主题色定制 */</span>
+<span class="line">:root:root {</span>
+<span class="line">  --van-primary-color: #05336E; /* 主要颜色 */</span>
+<span class="line">}</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>App.vue中：</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">&lt;van-button type=&quot;primary&quot;&gt;主要按钮&lt;/van-button&gt;</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div></div></div><h2 id="" tabindex="-1"><a class="header-anchor" href="#"><span></span></a></h2><h2 id="配置代理" tabindex="-1"><a class="header-anchor" href="#配置代理"><span>配置代理</span></a></h2><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">server: {</span>
+<span class="line">// 服务器主机名，默认是 localhost</span>
+<span class="line">host: &#39;0.0.0.0&#39;,</span>
+<span class="line">// 端口号，默认是 5173</span>
+<span class="line">port: 8001,</span>
+<span class="line"></span>
+<span class="line">hmr: { overlay: false },</span>
+<span class="line">// 是否开启 https</span>
+<span class="line">https: false,</span>
+<span class="line">// 是否开启自动打开浏览器</span>
+<span class="line">open: true,</span>
+<span class="line">proxy: {</span>
+<span class="line">    &#39;^/api&#39;: {</span>
+<span class="line">    // 代理目标地址</span>
+<span class="line">    target: &#39;https://demo.open.renren.io/renren-security-server/&#39;,</span>
+<span class="line">    changeOrigin: true,</span>
+<span class="line">    rewrite: (path) =&gt; path.replace(/^\/api/, &#39;&#39;),</span>
+<span class="line">    },</span>
+<span class="line">},</span>
+<span class="line">},</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="router" tabindex="-1"><a class="header-anchor" href="#router"><span>router</span></a></h2><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">import { createRouter, createWebHistory, createWebHashHistory } from &#39;vue-router&#39;</span>
+<span class="line"></span>
+<span class="line">const router = createRouter({</span>
+<span class="line">  history: createWebHistory(import.meta.env.BASE_URL),</span>
+<span class="line">  // history: createWebHashHistory(),//#</span>
+<span class="line">  routes: [</span>
+<span class="line">    {</span>
+<span class="line">      path: &#39;/login&#39;,</span>
+<span class="line">      name: &#39;login&#39;,</span>
+<span class="line">      component: () =&gt; import(&#39;@/views/LoginView.vue&#39;),</span>
+<span class="line">      meta: {</span>
+<span class="line">        requiresAuth: false // 不需要登录</span>
+<span class="line">      }</span>
+<span class="line">    },</span>
+<span class="line">    {</span>
+<span class="line">      path: &#39;/&#39;, // 首页-合规判定</span>
+<span class="line">      name: &#39;judgeForm&#39;,</span>
+<span class="line">      component: () =&gt; import(&#39;@/views/index/JudgeFormView.vue&#39;),</span>
+<span class="line">      meta: {</span>
+<span class="line">        requiresAuth: true, // 需要登录</span>
+<span class="line">        showTab: true // 显示底部菜单</span>
+<span class="line">      }</span>
+<span class="line">    },</span>
+<span class="line">    </span>
+<span class="line">    {</span>
+<span class="line">      path: &#39;/judgeResult&#39;, // 判定结果</span>
+<span class="line">      name: &#39;judgeResult&#39;,</span>
+<span class="line">      component: () =&gt; import(&#39;@/views/index/JudgeResultView.vue&#39;),</span>
+<span class="line">      meta: {</span>
+<span class="line">        requiresAuth: true, // 需要登录</span>
+<span class="line">      }</span>
+<span class="line">    },</span>
+<span class="line">    {</span>
+<span class="line">      path: &#39;/record&#39;, // 判定记录</span>
+<span class="line">      name: &#39;record&#39;,</span>
+<span class="line">      component: () =&gt; import(&#39;@/views/judge/RecordView.vue&#39;),</span>
+<span class="line">      meta: {</span>
+<span class="line">        requiresAuth: true, // 需要登录</span>
+<span class="line">        showTab: true // 显示底部菜单</span>
+<span class="line">      }</span>
+<span class="line">    },</span>
+<span class="line">    {</span>
+<span class="line">      path: &#39;/details&#39;, // 判定详情</span>
+<span class="line">      name: &#39;details&#39;,</span>
+<span class="line">      component: () =&gt; import(&#39;@/views/judge/DetailsView.vue&#39;),</span>
+<span class="line">      meta: {</span>
+<span class="line">        requiresAuth: true, // 需要登录</span>
+<span class="line">      }</span>
+<span class="line">    },</span>
+<span class="line">    {</span>
+<span class="line">      path: &#39;/my&#39;,</span>
+<span class="line">      name: &#39;my&#39;,</span>
+<span class="line">      component: () =&gt; import(&#39;@/views/MyView.vue&#39;),</span>
+<span class="line">      meta: {</span>
+<span class="line">        requiresAuth: true, // 需要登录</span>
+<span class="line">        showTab: true</span>
+<span class="line">      }</span>
+<span class="line">    },</span>
+<span class="line">  ],</span>
+<span class="line">})</span>
+<span class="line"></span>
+<span class="line">// 全局前置守卫</span>
+<span class="line">// router.beforeEach((to, from, next) =&gt; {</span>
+<span class="line">//   // 检查路由是否需要认证</span>
+<span class="line">//   console.log(to.meta.requiresAuth)</span>
+<span class="line">//   if (to.meta.requiresAuth &amp;&amp; getCache(&#39;Token&#39;)===null) {</span>
+<span class="line">//     next(&#39;/login&#39;)</span>
+<span class="line">//   } else {</span>
+<span class="line">//     next()</span>
+<span class="line">//   }</span>
+<span class="line">// })</span>
+<span class="line"></span>
+<span class="line">export default router</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="引入-axios" tabindex="-1"><a class="header-anchor" href="#引入-axios"><span>引入 axios</span></a></h2><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">import axios from &#39;axios&#39;</span>
+<span class="line">import router from &#39;@/router&#39;</span>
+<span class="line">//创建实例</span>
+<span class="line">const service = axios.create({</span>
+<span class="line">  baseURL: import.meta.env.VITE_APP_API,</span>
+<span class="line">  timeout: 60000,</span>
+<span class="line">})</span>
+<span class="line"></span>
+<span class="line">// 添加请求拦截器</span>
+<span class="line">service.interceptors.request.use(</span>
+<span class="line">  function (config) {</span>
+<span class="line">    // console.log(getCache(&#39;Token&#39;));</span>
+<span class="line"></span>
+<span class="line">    // 在发送请求之前做些什么</span>
+<span class="line">    config.headers[&#39;Token&#39;] = getCache(&#39;Token&#39;)</span>
+<span class="line">    if (!config.headers[&#39;Content-Type&#39;]) {</span>
+<span class="line">      if (config.data instanceof FormData) {</span>
+<span class="line">        config.headers[&#39;Content-Type&#39;] = &#39;multipart/form-data&#39;</span>
+<span class="line">      } else if (typeof config.data === &#39;string&#39;) {</span>
+<span class="line">        config.headers[&#39;Content-Type&#39;] = &#39;text/plain&#39;</span>
+<span class="line">      } else {</span>
+<span class="line">        config.headers[&#39;Content-Type&#39;] = &#39;application/json&#39;</span>
+<span class="line">      }</span>
+<span class="line">    }</span>
+<span class="line">    config.headers[&#39;Accept&#39;] = &#39;text/event-stream,application/json, text/event-stream&#39;</span>
+<span class="line">    if (config.method?.toUpperCase() === &#39;GET&#39;) {</span>
+<span class="line">      config.params = { ...config.params, _t: new Date().getTime() }</span>
+<span class="line">    }</span>
+<span class="line"></span>
+<span class="line">    return config</span>
+<span class="line">  },</span>
+<span class="line">  function (error) {</span>
+<span class="line">    // 对请求错误做些什么</span>
+<span class="line">    return Promise.reject(error)</span>
+<span class="line">  },</span>
+<span class="line">)</span>
+<span class="line"></span>
+<span class="line">// 添加响应拦截器</span>
+<span class="line">service.interceptors.response.use(</span>
+<span class="line">  function (response) {</span>
+<span class="line">    // 2xx 范围内的状态码都会触发该函数。</span>
+<span class="line">    // 对响应数据做点什么</span>
+<span class="line">    if (response.data.code === 0) {</span>
+<span class="line">      return response.data.data</span>
+<span class="line">    } else {</span>
+<span class="line">      // 错误提示</span>
+<span class="line">      ElMessage.error(response.data.msg)</span>
+<span class="line">      console.log(&#39;接口异常：&#39;, response.data.msg)</span>
+<span class="line">      console.log(response.data)</span>
+<span class="line">      if (response.data.code == 401) {</span>
+<span class="line">        clearCache()</span>
+<span class="line">        //跳转首页</span>
+<span class="line">        redirectLogin()</span>
+<span class="line">      }</span>
+<span class="line">    }</span>
+<span class="line">  },</span>
+<span class="line">  function (error) {</span>
+<span class="line">    console.log(error)</span>
+<span class="line">    // 超出 2xx 范围的状态码都会触发该函数。</span>
+<span class="line">    // 对响应错误做点什么</span>
+<span class="line">    // toast(error.response.data.msg,error || &#39;请求失败&#39;)</span>
+<span class="line">    // ElMessage.error(&#39;请求失败&#39;)</span>
+<span class="line">    console.log(&#39;请求失败&#39;)</span>
+<span class="line">    return Promise.reject(error)</span>
+<span class="line">  },</span>
+<span class="line">)</span>
+<span class="line"></span>
+<span class="line">const redirectLogin = () =&gt; {</span>
+<span class="line">  router.replace(&#39;/login&#39;)</span>
+<span class="line">  return</span>
+<span class="line">}</span>
+<span class="line"></span>
+<span class="line">//1.</span>
+<span class="line">export default service</span>
+<span class="line">//2.</span>
+<span class="line">// export default {</span>
+<span class="line">//     install(app,options) {</span>
+<span class="line">//         app.config.globalProperties.$http = service</span>
+<span class="line">//         app.provide(&#39;$http&#39;, service);</span>
+<span class="line">//     }</span>
+<span class="line">// }</span>
+<span class="line"></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="安装tailwindcss和postcss" tabindex="-1"><a class="header-anchor" href="#安装tailwindcss和postcss"><span>安装tailwindcss和postcss</span></a></h2><p><a href="https://www.tailwindcss.cn/docs/guides/vite#vue" target="_blank" rel="noopener noreferrer">https://www.tailwindcss.cn/docs/guides/vite#vue</a><a href="https://v3.tailwindcss.com/docs/guides/vite#vue" target="_blank" rel="noopener noreferrer">https://v3.tailwindcss.com/docs/guides/vite#vue</a> // 英文官网</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">// npm install -D tailwindcss tailwindcss autoprefixer</span>
+<span class="line">npm install -D tailwindcss@3 postcss autoprefixer // 3版本</span>
+<span class="line"></span>
+<span class="line">npx tailwindcss init -p</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>再新建.css文件，导入</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">@tailwind base;</span>
+<span class="line">@tailwind components;</span>
+<span class="line">@tailwind utilities;</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="vant主题色配置-1" tabindex="-1"><a class="header-anchor" href="#vant主题色配置-1"><span>vant主题色配置</span></a></h2><p>main.js中引入vant-theme.css即可：</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">/* vant主题色定制 */</span>
+<span class="line">:root:root {</span>
+<span class="line">  --van-primary-color: #05336E; /* 主要颜色 */</span>
+<span class="line">}</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>App.vue中：</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">&lt;van-button type=&quot;primary&quot;&gt;主要按钮&lt;/van-button&gt;</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div></div></div><h2 id="tailwind-config-js配置-主题色" tabindex="-1"><a class="header-anchor" href="#tailwind-config-js配置-主题色"><span>tailwind.config.js配置-主题色</span></a></h2><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">/** @type {import(&#39;tailwindcss&#39;).Config} */</span>
+<span class="line">export default {</span>
+<span class="line">  content: [</span>
+<span class="line">    &quot;./index.html&quot;,</span>
+<span class="line">    &quot;./src/**/*.{vue,js,ts,jsx,tsx}&quot;,</span>
+<span class="line">  ],</span>
+<span class="line">  theme: {</span>
+<span class="line">    extend: {</span>
+<span class="line">      colors:{</span>
+<span class="line">        // 自定义颜色</span>
+<span class="line">        primary: &#39;var(--van-primary-color)&#39;,</span>
+<span class="line">      }</span>
+<span class="line">    },</span>
+<span class="line">  },</span>
+<span class="line">  plugins: [],</span>
+<span class="line">}</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="app-vue底部插入van-tabbar菜单-因为是悬浮-高度影响内容" tabindex="-1"><a class="header-anchor" href="#app-vue底部插入van-tabbar菜单-因为是悬浮-高度影响内容"><span>App.vue底部插入van-tabbar菜单，因为是悬浮，高度影响内容</span></a></h2><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">&lt;template&gt;</span>
+<span class="line">  &lt;!-- &lt;van-config-provider&gt; --&gt;</span>
+<span class="line">    &lt;div class=&quot;flex flex-col h-screen&quot;&gt;</span>
+<span class="line">      &lt;div class=&quot;flex-1 h-screen overflow-scroll&quot;&gt;</span>
+<span class="line">        &lt;RouterView /&gt;</span>
+<span class="line">      &lt;/div&gt;</span>
+<span class="line">      &lt;div v-if=&quot;showFooter&quot; class=&quot;h-[var(--van-tabbar-height)]&quot;&gt;&lt;/div&gt;</span>
+<span class="line">      &lt;van-tabbar v-if=&quot;showFooter&quot; v-model=&quot;active&quot; @change=&quot;onChange&quot; safe-area-inset-bottom&gt;</span>
+<span class="line">        &lt;van-tabbar-item name=&quot;record&quot; icon=&quot;home-o&quot;&gt;判定记录&lt;/van-tabbar-item&gt;</span>
+<span class="line">        &lt;van-tabbar-item name=&quot;judgeForm&quot; icon=&quot;search&quot;&gt;合规判定&lt;/van-tabbar-item&gt;</span>
+<span class="line">        &lt;van-tabbar-item name=&quot;my&quot; icon=&quot;friends-o&quot;&gt;个人中心&lt;/van-tabbar-item&gt;</span>
+<span class="line">      &lt;/van-tabbar&gt;</span>
+<span class="line">    &lt;/div&gt;</span>
+<span class="line">  &lt;!-- &lt;/van-config-provider&gt; --&gt;</span>
+<span class="line">&lt;/template&gt;</span>
+<span class="line">&lt;script setup&gt;</span>
+<span class="line">const route = useRoute()</span>
+<span class="line">const router = useRouter()</span>
+<span class="line">const active = ref(&#39;judgeForm&#39;)</span>
+<span class="line">const showFooter = computed(() =&gt; route.meta.isTab || false)</span>
+<span class="line"></span>
+<span class="line">watch(</span>
+<span class="line">  () =&gt; route.name,</span>
+<span class="line">  (newValue, oldValue) =&gt; {</span>
+<span class="line">    active.value = newValue</span>
+<span class="line">  },</span>
+<span class="line">)</span>
+<span class="line">const onChange = (name) =&gt; {</span>
+<span class="line">  console.log(&#39;onChange&#39;, name)</span>
+<span class="line">  // active.value = name</span>
+<span class="line">  router.push({</span>
+<span class="line">    name: name,</span>
+<span class="line">  })</span>
+<span class="line">}</span>
+<span class="line">&lt;/script&gt;</span>
+<span class="line">&lt;style scoped&gt;</span>
+<span class="line"></span>
+<span class="line">&lt;/style&gt;</span>
+<span class="line"></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="引入legacy插件-对旧版浏览器支持-尤其火狐" tabindex="-1"><a class="header-anchor" href="#引入legacy插件-对旧版浏览器支持-尤其火狐"><span>引入legacy插件，对旧版浏览器支持(尤其火狐)</span></a></h2><p>https://www.npmjs.com/package/@vitejs/plugin-legacy?activeTab=readme</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">npm install @vitejs/plugin-legacy -D</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div></div></div><p>使用</p><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">// vite.config.js</span>
+<span class="line">import legacy from &#39;@vitejs/plugin-legacy&#39;</span>
+<span class="line"></span>
+<span class="line">export default {</span>
+<span class="line">  plugins: [</span>
+<span class="line">    legacy({</span>
+<span class="line">      targets: [&#39;defaults&#39;, &#39;not IE 11&#39;],</span>
+<span class="line">    }),</span>
+<span class="line">  ],</span>
+<span class="line">}</span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="必须安装terser-因为-plugin-legacy-使用-terser-进行代码压缩。" tabindex="-1"><a class="header-anchor" href="#必须安装terser-因为-plugin-legacy-使用-terser-进行代码压缩。"><span>必须安装terser，因为 plugin-legacy 使用 Terser 进行代码压缩。</span></a></h3><div class="language-text line-numbers-mode" data-highlighter="prismjs" data-ext="text"><pre><code class="language-text"><span class="line">npm add -D terser</span>
+<span class="line"></span>
+<span class="line"></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div></div></div></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><!----></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/box/assets/app-Bs7c4l0-.js" defer></script>
+  </body>
+</html>

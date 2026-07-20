@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            border: 1px solid #ccc;
+            display: flex;
+            height: 280px;
+            flex-direction: column; /* 主轴为垂直方向，起点在上沿 */
+        }
+        .item{
+            border: 1px solid red;
+        }
+        .item1{
+            height: 80px;
+        }
+        .item2{
+            height: 160px
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+    </div>
+</body>
+</html>
